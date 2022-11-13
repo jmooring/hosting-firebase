@@ -1,0 +1,9 @@
+{{ with site.RegularPages.Related . | first 3 }}
+  <p>Related:
+    <ul>
+      {{ range .ByTitle }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+  </p>
+{{ end }}

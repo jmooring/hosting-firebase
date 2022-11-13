@@ -1,0 +1,25 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Hosting Test - Firebase'
+
+disableKinds = ['RSS','sitemap']
+
+[[menu.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+[[menu.main]]
+name = 'Posts'
+pageRef = '/posts'
+weight = 20
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+[[related.indices]]
+  name = 'tags'
+  weight = 100
+
+[taoxonomies]
+tag = 'tags'

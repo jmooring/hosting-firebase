@@ -1,0 +1,6 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ partial "tags.html" . }}
+  {{ partial "related.html" . }}
+  {{ .Content }}
+{{ end }}
