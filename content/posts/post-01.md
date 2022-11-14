@@ -1,7 +1,7 @@
 +++
 title = 'Post 01'
 date = 2022-11-13T08:53:34-08:00
-draft = true
+draft = false
 tags = ['red','green','blue']
 +++
 The physical history of the universe is written in terms of heat and motion. Astronomy is the story of cooling suns and worlds. At a low enough temperature all chemical activity ceases. In our own experience we find that frost will blister like flame. In the one case heat passes into the tissues so quickly and in such quantity that a blister ensues; in the other, heat is abstracted so quickly and in such quantity that a like effect is produced. In one sense, life is a thermal phenomenon; so are all conditions of fluids and solids thermal phenomena.
