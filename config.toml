@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'Hosting Test - Firebase'
 
 disableKinds = ['RSS','sitemap']
+enableGitInfo = true
 
 [[menu.main]]
 name = 'Home'

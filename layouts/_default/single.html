@@ -3,4 +3,10 @@
   {{ partial "tags.html" . }}
   {{ partial "related.html" . }}
   {{ .Content }}
+  <hr>
+  {{ with .GitInfo }}
+    {{ with .AuthorDate }}
+      <p><em>Last modified {{ . | time.Format ":date_medium" }} at {{ . | time.Format ":time_full" }}</em></p>
+    {{ end }}
+  {{ end }}
 {{ end }}
