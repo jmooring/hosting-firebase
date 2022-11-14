@@ -7,3 +7,18 @@ body {
   font-size: 18px;
   line-height: 1.5;
 }
+
+/*
+The ::placeholder CSS pseudo-element is here to test autoprefixer. If the
+autoprefixer does its job properly, the final CSS should be:
+::-moz-placeholder {
+  color: gray;
+}
+::placeholder {
+  color: gray;
+}
+*/
+
+::placeholder {
+  color: gray;
+}

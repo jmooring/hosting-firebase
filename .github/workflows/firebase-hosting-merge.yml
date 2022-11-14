@@ -1,0 +1,41 @@
+name: Deploy to Firebase Hosting on merge
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: latest
+          extended: true
+
+      - name: Check for package-lock.json existence
+        id: check_files
+        uses: andstor/file-existence-action@v2
+        with:
+          files: package-lock.json
+
+      - name: Install Node.js dependencies
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: npm ci
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JOE_MOORING_TEST_4 }}'
+          channelId: live
+          projectId: joe-mooring-test-4

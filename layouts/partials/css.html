@@ -1,3 +1,4 @@
-{{ with resources.Get "scss/main.scss" | toCSS }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ $opts := dict "targetPath" "css/style.css" }}
+{{ with resources.Get "scss/main.scss" | toCSS $opts | postCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
 {{ end }}
