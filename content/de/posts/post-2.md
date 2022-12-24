@@ -1,6 +1,6 @@
 +++
 title = 'Post 2 (de)'
-date = 2022-12-23T20:35:21-08:00
+date = 2022-12-23T20:38:15-08:00
 draft = false
 +++
 On this doctrine of the extermination of an infinitude of connecting links, between the living and extinct inhabitants of the world, and at each successive period between the extinct and still older species, why is not every geological formation charged with such links? Why does not every collection of fossil remains afford plain evidence of the gradation and mutation of the forms of life? We meet with no such evidence, and this is the most obvious and forcible of the many objections which may be urged against my theory. Why, again, do whole groups of allied species appear, though certainly they often falsely appear, to have come in suddenly on the several geological stages? Why do we not find great piles of strata beneath the Silurian system, stored with the remains of the progenitors of the Silurian groups of fossils? For certainly on my theory suchstrata must somewhere have been deposited at these ancient and utterly unknown epochs in the world's history.

@@ -1,6 +1,6 @@
 +++
 title = 'Post 1 (en)'
-date = 2022-12-23T20:35:37-08:00
+date = 2022-12-23T20:37:49-08:00
 draft = false
 +++
 One calm morning at sunrise I saw the oaks and pines in Yosemite Valley shaken by an earthquake, their tops swishing back and forth, and every branch and needle shuddering as if in distress like the frightened screaming birds. One may imagine the trembling, rocking, tumultuous waving of those ancient Yellowstone woods, and the terror of their inhabitants when the first foreboding shocks were felt, the sky grew dark, and rock-laden floods began to roar. But though they were close pressed and buried, cut off from sun and wind, all their happy leaf-fluttering and waving done, other currents coursed through them, fondling and thrilling every fibre, and beautiful wood was replaced by beautiful stone. Now their rocky sepulchres are partly open, and show forth the natural beauty of death.
