@@ -1,35 +1,26 @@
-name: Deploy to Firebase Hosting on PR
+name: Deploy to Firebase Hosting on merge
 on: pull_request
 jobs:
-  build_and_preview:
+  build_and_deploy:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.109.0
     steps:
-      - name: Checkout repository
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass Embedded
+        run: sudo snap install dart-sass-embedded
+      - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: latest
-          extended: true
-
-      - name: Check for package-lock.json existence
-        id: check_files
-        uses: andstor/file-existence-action@v2
-        with:
-          files: package-lock.json
-
+          submodules: recursive
       - name: Install Node.js dependencies
-        if: steps.check_files.outputs.files_exists == 'true'
-        run: npm ci
-
-      - name: Build
-        run: hugo --minify
-
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Build with Hugo
+        run: hugo --gc --minify
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:

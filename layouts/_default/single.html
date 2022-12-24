@@ -1,12 +1,9 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  {{ partial "tags.html" . }}
-  {{ partial "related.html" . }}
-  {{ .Content }}
-  <hr>
+
   {{ with .GitInfo }}
-    {{ with .AuthorDate }}
-      <p><em>Last modified {{ . | time.Format ":date_medium" }} at {{ . | time.Format ":time_full" }}</em></p>
-    {{ end }}
+    <p><em>Last Modified: {{ .AuthorDate.Format "Jan 1, 2006 3:04:05 PM" }}</em></p>
   {{ end }}
+
+  {{ .Content }}
 {{ end }}
