@@ -5,7 +5,7 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.109.0
+      HUGO_VERSION: 0.110.0
     steps:
       - name: Install Hugo CLI
         run: |
