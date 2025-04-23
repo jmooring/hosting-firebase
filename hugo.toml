@@ -36,5 +36,8 @@ name = 'Posts'
 pageRef = '/posts'
 weight = '30'
 
+[module.hugoVersion]
+min = '0.146.7'
+
 [[module.imports]]
 path = "github.com/jmooring/hugo-content"
