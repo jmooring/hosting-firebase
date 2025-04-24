@@ -20,6 +20,8 @@ jobs:
           fetch-depth: 0
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Configure Git
+        run: git config core.quotepath false
       - name: Build with Hugo
         run: hugo --gc --minify
       - name: Deploy to Firebase
