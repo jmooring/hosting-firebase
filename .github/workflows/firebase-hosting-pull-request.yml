@@ -1,14 +1,18 @@
-name: Deploy to Firebase Hosting on pull request
-on: pull_request
+name: Build and deploy to Firebase on pull request
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   build_and_deploy:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     env:
-      DART_SASS_VERSION: 1.97.3
-      GO_VERSION: 1.26.0
-      HUGO_VERSION: 0.155.3
-      NODE_VERSION: 24.13.1
+      DART_SASS_VERSION: 1.98.0
+      GO_VERSION: 1.26.1
+      HUGO_VERSION: 0.158.0
+      NODE_VERSION: 24.14.0
       TZ: Europe/Oslo
     steps:
       - name: Create directory for user-specific executable files
