@@ -80,6 +80,7 @@ jobs:
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JOE_MOORING_TEST_4 }}"
           projectId: joe-mooring-test-4
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
