@@ -6,8 +6,6 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 defaults:
   run:
     shell: bash
@@ -87,7 +85,6 @@ jobs:
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JOE_MOORING_TEST_4 }}"
           channelId: live
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_JOE_MOORING_TEST_4 }}"
           projectId: joe-mooring-test-4
